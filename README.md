@@ -18,7 +18,7 @@ https://github.com/jakored1/com-pi-nion/blob/main/demo.mp4
 ## Setup  
 The setup starts assuming that you have a fresh installation of the `Raspberry Pi OS Lite (32-bit)` on your [`Raspberry Pi Zero W`](https://www.raspberrypi.com/products/raspberry-pi-zero-w/), and that you have connected the [`2.13 inch E-ink disaply HAT`](https://www.waveshare.com/2.13inch-e-paper-hat.htm) to it.  
 Connect to your [`Raspberry Pi Zero W`](https://www.raspberrypi.com/products/raspberry-pi-zero-w/) however you like, and begin the setup!  
-If you already know how the project works, or don't care for the details, skip to the [usage](#usage) area.
+##### If you already know how the project works, or don't care for the details, skip to the [usage](#usage) area.
   
 ## Installations  
 Lets follow the [setup on the waveshare website](https://www.waveshare.com/wiki/2.13inch_e-Paper_HAT_Manual#Overview) to set up our [`2.13 inch E-ink disaply HAT`](https://www.waveshare.com/2.13inch-e-paper-hat.htm) with the [`Raspberry Pi Zero W`](https://www.raspberrypi.com/products/raspberry-pi-zero-w/).  
