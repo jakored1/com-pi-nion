@@ -1,0 +1,79 @@
+{
+	"wifi_interface": "wlan0",
+	"mobile_hotspot_ssid": "TheAwesomeNetwork",
+	"mobile_hotspot_password": "SecretPassword",
+	"base_dir": "/opt/com-pi-nion",
+	"display_bssids": false,
+	"repeat": false,
+	"repeat_cooldown": 10,
+	"text_font": "DejaVuSansMono",
+	"text_font_bold": "DejaVuSansMono-Bold",
+	"text_font_size": 12,
+	"text_font_stroke_width": 0,
+	"text_font_stroke_width_bold": 0,
+	"test_internet_with": [
+		{
+			"host": "https://duckduckgo.com/",
+			"expected_status": 200,
+			"user_agent": "Mozilla/5.0 (Linux; Android 15) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.6778.135 Mobile Safari/537.36"
+		},
+		{
+			"host": "https://google.com",
+			"expected_status": 200,
+			"user_agent": "Mozilla/5.0 (Linux; Android 15) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.6778.135 Mobile Safari/537.36"
+		},
+		{
+			"host": "https://www.bing.com",
+			"expected_status": 200,
+			"user_agent": "Mozilla/5.0 (Linux; Android 15) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.6778.135 Mobile Safari/537.36"
+		}
+	],
+	"finding_location_message": [
+		"I will find you...",
+		"<- Locating target ->",
+		"Where are you?",
+		"Locating...",
+		"Loading...",
+		"Discovering your location\njust a sec :)",
+		"Talking to satelites"
+	],
+	"sad_angry_characters": [
+		"( ͡° ʖ̯ ͡°)",
+		"•`_´•",
+		"(-__-)",
+		"(°▃▃°)",
+		"(≖__≖)",
+		"(ب__ب)",
+		"(╥☁╥ )",
+		"(-_-')",
+		"(☓‿‿☓)"
+	],
+	"happy_characters": [
+		"(⌐■_■)",
+		"(◕‿‿◕)",
+		"(•‿‿•)",
+		"(^‿‿^)",
+		"(ᵔ◡◡ᵔ)",
+		"(☼‿‿☼)",
+		"(♥‿‿♥)",
+		"☉ ‿ ⚆",
+		"<(^_^)>",
+		"| (• ◡•)|",
+		"(✿◠‿◠)",
+		"♥‿♥",
+		"(•̀ᴗ•́)و",
+		"(̿▀̿‿ ̿▀̿ )",
+		"⊂(◉‿◉)ᴝ",
+		"\\(^o^)/",
+		"٩(^‿^)۶",
+		"ʕ♥ɷ♥ʔ"
+	],
+	"looking_characters": [
+		"( ⚆_⚆)",
+		"(☉_☉ )",
+		"( ◕‿◕)",
+		"(◕‿◕ )",
+		"(⇀‿‿↼)",
+		"(≖‿‿≖)"
+	]
+}
