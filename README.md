@@ -417,7 +417,7 @@ Most of the configuration options are self-explanitory, but here are some worth 
 - `display_bssids` - Whether or not to display the BSSIDs that are being scanned to the user. Enabling this can be usefull for debugging  
 - `repeat` - If set to true, the [`Raspberry Pi Zero W`](https://www.raspberrypi.com/products/raspberry-pi-zero-w/) will rerun the script endlessly until turned off. This can be nice if you have a bunch of animations for the same location and want them to be displayed over time  
 - `repeat_cooldown` - How long to wait before re-running the script  
-- `test_internet_with` - This is an array of websites that is used by the script to make sure it has internet. You can edit or add your own. The script will make a get request to the given url (`host`), with the given user agent (`user_agent`), and asume there is a valid internet connection if the get request returns the given status code (`expected_status`)  
+- `test_internet_with` - This is an array of websites that is used by the script to make sure it has internet. You can edit or add your own. The script will make a GET request to the given url (`host`), with the given user agent (`user_agent`), and asume there is a valid internet connection if the response returns the given status code (`expected_status`)  
   
 After you set everything up, you will probably want to make this whole thing into a service so that it runs every time the [`Raspberry Pi Zero W`](https://www.raspberrypi.com/products/raspberry-pi-zero-w/) boots up:  
 ```bash  
