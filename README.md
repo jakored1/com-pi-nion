@@ -1,4 +1,4 @@
-# The ComPInion
+# The Com-Pi-nion
 In this project we will use the [`Raspberry Pi Zero W`](https://www.raspberrypi.com/products/raspberry-pi-zero-w/) and the [`2.13 inch E-ink disaply HAT`](https://www.waveshare.com/2.13inch-e-paper-hat.htm) to display images in a "stop motion like manner", creating the illusion of a video.  
 The "videos" which are displayed are chosen based on the current location of the [`Raspberry Pi Zero W`](https://www.raspberrypi.com/products/raspberry-pi-zero-w/).  
 To discover the [`Raspberry Pi Zero W`](https://www.raspberrypi.com/products/raspberry-pi-zero-w/)'s location without attaching a GPS to it, we scan nearby WiFi networks, and use [this repo](https://github.com/jakored1/bssid_locator) to discover our location with Apple's Geo-Location services.  
