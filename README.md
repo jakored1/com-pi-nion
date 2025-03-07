@@ -358,7 +358,7 @@ sudo apt-get install -y git python3-pip python3-pil python3-spidev python3-rpi.g
 
 # Clone repo 
 cd /opt
-sudo git clone ...
+sudo git clone https://github.com/jakored1/com-pi-nion.git
 sudo chown -R $USER:$USER /opt/com-pi-nion
 rm /opt/com-pi-nion/demo.mp4 
 
