@@ -387,7 +387,7 @@ Tips:
 - It is not required to run `clear` as the first action, the screen is cleared before iterating over the actions.  
 - Don't run `displayPartial` and then `display` directly after. If you want to run `displayPartial` and then `display`, you should add a `clear` after the `displayPartial` or the `display` might not work properly.  
   
-Usefull script to convery images to .bmp format:  
+Usefull script to convert images to .bmp format:  
 ```python  
 from PIL import Image
 src_img_path = "image.png"
