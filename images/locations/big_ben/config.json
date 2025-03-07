@@ -1,0 +1,27 @@
+{
+	"latitude": 51.50064895405439,
+	"longitude": -0.12465760185435652,
+	"radius_km": 0.1,
+	"matching_ssids": ["BigBen_network"],
+	"matching_bssids": ["aa:bb:cc:dd:ee:ff"],
+	"actions": [
+		"display image image1.bmp",
+		"sleep 0.5",
+		"displayPartial image image2.bmp",
+		"sleep 0.5",
+		"displayPartial image image3.bmp",
+		"sleep 0.5",
+		"displayPartial image image4.bmp",
+		"sleep 0.5",
+		"displayPartial image image5.bmp",
+		"sleep 0.5",
+		"displayPartial image image6.bmp",
+		"sleep 0.5",
+		"displayPartial image image7.bmp",
+		"sleep 0.5",
+		"displayPartial image image8.bmp",
+		"sleep 0.5",
+		"displayPartial image image9.bmp",
+		"sleep 2"
+	]
+}
