@@ -1,0 +1,6 @@
+[
+	"display message I can't find you!",
+	"sleep 2",
+	"display message See ya later!",
+	"sleep 2"
+]
