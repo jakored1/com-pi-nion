@@ -5,7 +5,7 @@ from time import sleep
 import os
 import sys
 
-from main.py import clear_screen, display_text, display_image, run_actions
+from main import clear_screen, display_text, display_image, run_actions
 
 with open("global_config.json", 'r') as f:
 	CONFIG = json.loads(f.read())
