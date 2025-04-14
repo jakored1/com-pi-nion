@@ -395,7 +395,7 @@ dst_img_path = "image.bmp"
 img = Image.open(src_img_path)
 img.save(dst_img_path)
 ```  
-To make sure you config.json file is valid, run this on it:  
+To make sure your config.json file is valid, run this on it:  
 ```python  
 import json
 json.loads("config.json")
