@@ -383,6 +383,8 @@ Available actions for the `config.json` and `actions.json` files to display the 
 - `displayPartial messageBold <TEXT_MESSAGE>` - display text message at the center of the screen without fully clearing screen  
 - `sleep X` - wait X seconds before moving to next action  
   
+Please note, the `main.py` script needs to run as root to fully work (because we use the command `nmcli device wifi connect...` to connect to the hotspot which requires root privileges)  
+  
 Tips:  
 - It is not required to run `clear` as the first action, the screen is cleared before iterating over the actions.  
 - Don't run `displayPartial` and then `display` directly after. If you want to run `displayPartial` and then `display`, you should add a `clear` after the `displayPartial` or the `display` might not work properly.  
