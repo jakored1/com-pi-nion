@@ -244,6 +244,22 @@ def location_in_radius(current_location: list, target_location: list, radius: fl
 
 def run_actions(epd, location_dir: str, actions: list):
 	""" Receives a folder path and displays the images in the folder according to the actions array """
+	# Log location as seen if user requests
+	if CONFIG["log_seen_locations"]:
+		try:
+			logfile = os.path.join(CONFIG["base_dir"], 'seen_locations.log')
+			if not os.path.exists(logfile):
+				with open(logfile, "w") as f:
+					f.write("")
+			with open(logfile, "r") as f:
+				logs = f.read()
+			if location_dir not in logs:
+				with open(logfile, "a") as f:
+					f.write(f"{location_dir}\n")
+		except Exception as e:
+			print(e)
+
+	# Display images
 	for raw_action in actions:
 		try:
 			action = str(raw_action).strip()
@@ -350,22 +366,65 @@ def main(epd):
 
 	clear_screen(epd)
 
-	# connect to mobile hotspot
-	result, attempts = connect_to_hotspot(epd)
-	if result:
-		happy_face = random.choice(CONFIG['happy_characters'])
-		# if attempts == 0:
-		# 	display_text(epd, f"Connected!\n\n{happy_face}", clear=False)
-		# else:
-		# 	display_text(epd, f"Connected!\n\n{happy_face}", clear=True)
-	else:
-		sad_face = random.choice(CONFIG['sad_angry_characters'])
-		display_text(epd, f"Couldn't connect to the network\nSsid - {CONFIG['mobile_hotspot_ssid']}\nPassword - {CONFIG['mobile_hotspot_password']}\n\n{sad_face}", clear=True)
-		sleep(8)
-		clear_screen(epd)
-		return
-	# sleep(1)
+	if CONFIG['ignore_location']:
+		while True:
+			locations = [subfolder.path for subfolder in os.scandir(LOCATIONS_DIR)]
+			random.shuffle(locations)
+			for location in locations:
+				if os.path.isdir(location):
+					config_file = os.path.join(location, "config.json")
+					try:
+						with open(config_file, "r") as f:
+							config = json.loads(f.read())
+						actions = list(config["actions"])
+						run_actions(epd, location, actions)
+						break
+					except Exception as e:
+						print(f"Ran into error reading {config_file}:\n{e}")
+						continue
 
+			if not CONFIG["repeat"]:
+				break
+			sleep(CONFIG["repeat_cooldown"])
+			clear_screen(epd)
+		return
+
+	# connect to mobile hotspot
+	if CONFIG["dont_connect_to_hotspot"]:
+		cnt = 0
+		while True:
+			looking_face = random.choice(CONFIG['looking_characters'])
+			message = f"Checking internet connection..."
+			display_text(epd, f"{message}\n\n{looking_face}", clear=False, display_partial=False)
+			# Check if we are connected to the wifi network
+			if check_internet_connection():
+				break
+
+			cnt += 1
+			if cnt > 10:
+				print("Couldn't connect to wifi network (couldn't access the web)")
+				sad_face = random.choice(CONFIG['sad_angry_characters'])
+				display_text(epd, f"Couldn't access the internet\n\n{sad_face}", clear=True)
+				sleep(8)
+				clear_screen(epd)
+				return
+			if cnt % 2 == 0:  # Change looking face every 2 attempts
+				looking_face = random.choice(CONFIG['looking_characters'])
+	else:
+		result, attempts = connect_to_hotspot(epd)
+		if result:
+			happy_face = random.choice(CONFIG['happy_characters'])
+			# if attempts == 0:
+			# 	display_text(epd, f"Connected!\n\n{happy_face}", clear=False)
+			# else:
+			# 	display_text(epd, f"Connected!\n\n{happy_face}", clear=True)
+		else:
+			sad_face = random.choice(CONFIG['sad_angry_characters'])
+			display_text(epd, f"Couldn't connect to the network\nSsid - {CONFIG['mobile_hotspot_ssid']}\nPassword - {CONFIG['mobile_hotspot_password']}\n\n{sad_face}", clear=True)
+			sleep(8)
+			clear_screen(epd)
+			return
+		# sleep(1)
 
 	while True:
 		coordinates, networks = get_networks_and_coordinates()
